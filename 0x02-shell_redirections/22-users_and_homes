@@ -1,2 +1,2 @@
 #!/bin/bash
-grep -v '^[[:space:]]*$' /etc/passwd | sort -t: -k1,1 | awk -F: '{print "User:", $1, "\tHome Directory:", $6}'
+cut -d ':' -f 1,6 /etc/passwd | sort
