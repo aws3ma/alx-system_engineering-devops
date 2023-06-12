@@ -1,2 +1,2 @@
 #!/bin/bash
-read -r -a list; declare -A c; for w in "${list[@]}"; do ((c[$w]++)); done; for w in "${list[@]}"; do if [[ ${c[$w]} -eq 1 ]]; then echo "$w"; fi; done | sort
+read -r words && echo "$words" | tr ' ' '\n' | sort | uniq -u
